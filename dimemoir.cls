@@ -147,11 +147,11 @@
     {\fontsize{16\coverpagept}{1em}\selectfont\uppercase\expandafter{\@department}}\\%
     {\fontsize{14\coverpagept}{1em}\selectfont\uppercase\expandafter{\@faculty}}\\ \vspace{20mm}%
     \ifcsname @isotypebw\endcsname%
-      {\includegraphics[height=33mm]{\@isotypebw}}\\ \vspace{25mm}%
+      {\includegraphics[height=33mm]{\@isotypebw}}\vfill%
     \else
-      {\fbox{\parbox[c][33mm]{44mm}{\texttt{\textbackslash isotypebw} is undefined}}}\\ \vspace{25mm}
+      {\fbox{\parbox[c][33mm]{44mm}{\texttt{\textbackslash isotypebw} is undefined}}}\vfill%
     \fi
-    {\fontsize{20\coverpagept}{1em}\selectfont\uppercase\expandafter{\@title}}\\ \vspace{30mm}%
+    {\fontsize{20\coverpagept}{1em}\selectfont\uppercase\expandafter{\@title}}\vfill\vfill%
     {\fontsize{14\coverpagept}{1em}\selectfont\uppercase\expandafter{\@author}}\\ \vspace{4mm}%
     {\fontsize{12\coverpagept}{1em}\selectfont\uppercase\expandafter{\@degreecue}\\\uppercase\expandafter{\@degree}}\\ \vspace{4mm}%
     {\fontsize{12\coverpagept}{1em}\selectfont\uppercase\expandafter{\@guideprofcue} \uppercase\expandafter{\@guideprof}}\\ \vspace{10mm}%
@@ -171,11 +171,11 @@
     {\fontsize{16\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@department}}\\%
     {\fontsize{14\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@faculty}}\\ \vspace{20mm}%
     \ifcsname @isotypecolor\endcsname%
-      {\includegraphics[height=33mm]{\@isotypecolor}}\\ \vspace{25mm}%
+      {\includegraphics[height=33mm]{\@isotypecolor}}\vfill%
     \else
-      {\fbox{\parbox[c][33mm]{44mm}{\texttt{\textbackslash isotypecolor} is undefined}}}\\ \vspace{25mm}
+      {\fbox{\parbox[c][33mm]{44mm}{\texttt{\textbackslash isotypecolor} is undefined}}}\vfill%
     \fi
-    {\fontsize{20\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@title}}\\ \vspace{30mm}%
+    {\fontsize{20\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@title}}\vfill\vfill%
     {\fontsize{14\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@author}}\\ \vspace{4mm}%
     {\fontsize{12\coverpagept}{1em}\selectfont\bf\uppercase\expandafter{\@degreecue}\\\uppercase\expandafter{\@degree}}\\ \vspace{4mm}%
     {\fontsize{12\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@guideprofcue} \uppercase\expandafter{\@guideprof}}\\%
