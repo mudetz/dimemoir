@@ -203,7 +203,7 @@
 % ==============================================
 \newcommand*{\makehardcodedtranslations}{%
   \renewcommand*{\contentsname}{\'Indice de Contenidos}%
-  \renewcommand*{\listfigurename}{\'Indice de Figuras}%
-  \renewcommand*{\listtablename}{\'Indice de Tablas}%
+  \renewcommand*{\listfigurename}{Lista de Figuras}%
+  \renewcommand*{\listtablename}{Lista de Tablas}%
   \renewcommand*{\bibname}{Referencias}%
 }
