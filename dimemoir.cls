@@ -10,7 +10,7 @@
 % and version 1.3 or later is part of all distributions of LaTeX
 % version 2005/12/01 or later.
 
-\NeedsTeXFormat{LaTeX2e}[2018-04-01]
+\NeedsTeXFormat{LaTeX2e}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extreport}}
 \ProcessOptions\relax
@@ -188,7 +188,7 @@
 % ==============================================
 \makeatletter
   \ifdim\overfullrule>\z@
-    \usepackage{showframe}
+    \RequirePackage{showframe}
     \renewcommand*\ShowFrameColor{\color{lightgray}}
   \fi
 \makeatother
@@ -198,8 +198,8 @@
 % HARDCODED TRANSLATIONS
 % ==============================================
 \newcommand*{\makehardcodedtranslations}{%
-  \renewcommand*{\contentsname}{Índice de Contenidos}%
-  \renewcommand*{\listfigurename}{Índice de Figuras}%
-  \renewcommand*{\listtablename}{Índice de Tablas}%
+  \renewcommand*{\contentsname}{\'Indice de Contenidos}%
+  \renewcommand*{\listfigurename}{\'Indice de Figuras}%
+  \renewcommand*{\listtablename}{\'Indice de Tablas}%
   \renewcommand*{\bibname}{Referencias}%
 }
