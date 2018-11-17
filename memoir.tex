@@ -75,11 +75,8 @@
   % Abstract
   \input{include/abstract}
   % TOCs
-  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Índice de Contenidos}
   \tableofcontents
-  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Lista de Tablas}
   \listoftables
-  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Lista de Figuras}
   \listoffigures
   % Abreviaciones
   \input{include/glossary}
@@ -100,8 +97,6 @@
   \input{include/conclusions}
 
 \backmatter
-  \bibliographystyle{bib/apalike-es}
-  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Referencias}
-  \bibliography{bib/papers}
+  \makebibliography{bib/apalike-es}
 
 \end{document}

@@ -186,6 +186,31 @@
   \clearpage{\pagestyle{empty}\cleardoublepage}%
 }
 
+% Table of contents and figure lists
+\let\oldtableofcontents\tableofcontents
+\let\oldlistoftables\listoftables
+\let\oldlistoffigures\listoffigures
+
+\renewcommand*\tableofcontents{%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Índice de Contenidos}%
+  \oldtableofcontents%
+}
+\renewcommand*\listoftables{%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Lista de Tablas}%
+  \oldlistoftables%
+}
+\renewcommand*\listoffigures{%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Lista de Figuras}%
+  \oldlistoffigures%
+}
+
+% Bibliography
+\newcommand*\makebibliography[1]{%
+  \bibliographystyle{#1}%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Referencias}%
+  \bibliography{bib/papers}%
+}
+
 
 % ==============================================
 % DRAFT MODE OPTIONS
