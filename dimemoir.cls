@@ -72,7 +72,7 @@
 \def\submityear#1{\gdef\@submityear{#1}}
 \def\isotypebw#1{\gdef\@isotypebw{#1}}
 \def\degree#1{\gdef\@degree{#1}}
-\def\@usenotice#1{\gdef\@usenotice{#1}}
+\def\usenotice#1{\gdef\@usenotice{#1}}
 \def\degreecue#1{\gdef\@degreecue{#1}}
 \def\isotypecolor#1{\gdef\@isotypecolor{#1}}
 
