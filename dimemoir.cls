@@ -207,3 +207,9 @@
   \renewcommand*{\listtablename}{Lista de Tablas}%
   \renewcommand*{\bibname}{Referencias}%
 }
+
+% ==============================================
+% WORK BETTER WITH HYPERREF PACKAGE
+% ==============================================
+\providecommand*\phantomsection{}
+
