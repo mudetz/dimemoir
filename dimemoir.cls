@@ -15,7 +15,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extreport}}
 \ProcessOptions\relax
 
-\LoadClass[letterpaper, 12pt, notitlepage, oneside]{extreport}
+\LoadClassWithOptions{extreport}
 \ProvidesClass{dimemoir}[2018-11-18 v0.01 LaTeX package for UTFSM DI Memoir]
 
 \RequirePackage{graphicx}
