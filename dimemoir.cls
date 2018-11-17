@@ -153,7 +153,7 @@
     \fi
     {\fontsize{20\coverpagept}{1em}\selectfont\uppercase\expandafter{\@title}}\\ \vspace{30mm}%
     {\fontsize{14\coverpagept}{1em}\selectfont\uppercase\expandafter{\@author}}\\ \vspace{4mm}%
-    {\fontsize{12\coverpagept}{1em}\selectfont\uppercase\expandafter{\@degreecue} \uppercase\expandafter{\@degree}}\\ \vspace{4mm}%
+    {\fontsize{12\coverpagept}{1em}\selectfont\uppercase\expandafter{\@degreecue}\\\uppercase\expandafter{\@degree}}\\ \vspace{4mm}%
     {\fontsize{12\coverpagept}{1em}\selectfont\uppercase\expandafter{\@guideprofcue} \uppercase\expandafter{\@guideprof}}\\ \vspace{10mm}%
     {\fontsize{14\coverpagept}{1em}\selectfont\uppercase\expandafter{\@submitmonth} \@submityear}%
   \end{center}%
@@ -177,6 +177,7 @@
     \fi
     {\fontsize{20\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@title}}\\ \vspace{30mm}%
     {\fontsize{14\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@author}}\\ \vspace{4mm}%
+    {\fontsize{12\coverpagept}{1em}\selectfont\bf\uppercase\expandafter{\@degreecue}\\\uppercase\expandafter{\@degree}}\\ \vspace{4mm}%
     {\fontsize{12\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@guideprofcue} \uppercase\expandafter{\@guideprof}}\\%
     {\fontsize{12\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@corrprofcue} \uppercase\expandafter{\@corrprof}}\\ \vspace{10mm}%
     {\fontsize{14\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@submitmonth} \@submityear}\\ \vspace{4mm}%
