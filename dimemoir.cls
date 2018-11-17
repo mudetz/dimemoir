@@ -12,9 +12,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{extreport}}
-\ProcessOptions\relax
-
 \LoadClassWithOptions{extreport}
 \ProvidesClass{dimemoir}[2018-11-18 v0.01 LaTeX package for UTFSM DI Memoir]
 
@@ -140,44 +137,50 @@
   \endflushright\cleardoublepage}
 
 % Cover page
-\newcommand*{\makecoverpage}{%
+\newcommand*{\makecoverpage}[1][0.98]{%
+  \newdimen\coverpagept%
+  \coverpagept=1pt%
+  \coverpagept=#1\coverpagept%
   \thispagestyle{empty}%
   \begin{center}%
-    {\fontsize{17.5pt}{1em}\selectfont\uppercase\expandafter{\@university}}\\ \vspace{5mm}%
-    {\fontsize{15.5pt}{1em}\selectfont\uppercase\expandafter{\@department}}\\%
-    {\fontsize{13.5pt}{1em}\selectfont\uppercase\expandafter{\@faculty}}\\ \vspace{20mm}%
+    {\fontsize{18\coverpagept}{1em}\selectfont\uppercase\expandafter{\@university}}\\ \vspace{5mm}%
+    {\fontsize{16\coverpagept}{1em}\selectfont\uppercase\expandafter{\@department}}\\%
+    {\fontsize{14\coverpagept}{1em}\selectfont\uppercase\expandafter{\@faculty}}\\ \vspace{20mm}%
     \ifcsname @isotypebw\endcsname%
       {\includegraphics[height=33mm]{\@isotypebw}}\\ \vspace{25mm}%
     \else
       {\fbox{\parbox[c][33mm]{44mm}{\texttt{\textbackslash isotypebw} is undefined}}}\\ \vspace{25mm}
     \fi
-    {\fontsize{19.5pt}{1em}\selectfont\uppercase\expandafter{\@title}}\\ \vspace{30mm}%
-    {\fontsize{13.5pt}{1em}\selectfont\uppercase\expandafter{\@author}}\\ \vspace{4mm}%
-    {\fontsize{11.5pt}{1em}\selectfont\uppercase\expandafter{\@degreecue} \uppercase\expandafter{\@degree}}\\ \vspace{4mm}%
-    {\fontsize{11.5pt}{1em}\selectfont\uppercase\expandafter{\@guideprofcue} \uppercase\expandafter{\@guideprof}}\\ \vspace{10mm}%
-    {\fontsize{13.5pt}{1em}\selectfont\uppercase\expandafter{\@submitmonth} \@submityear}%
+    {\fontsize{20\coverpagept}{1em}\selectfont\uppercase\expandafter{\@title}}\\ \vspace{30mm}%
+    {\fontsize{14\coverpagept}{1em}\selectfont\uppercase\expandafter{\@author}}\\ \vspace{4mm}%
+    {\fontsize{12\coverpagept}{1em}\selectfont\uppercase\expandafter{\@degreecue} \uppercase\expandafter{\@degree}}\\ \vspace{4mm}%
+    {\fontsize{12\coverpagept}{1em}\selectfont\uppercase\expandafter{\@guideprofcue} \uppercase\expandafter{\@guideprof}}\\ \vspace{10mm}%
+    {\fontsize{14\coverpagept}{1em}\selectfont\uppercase\expandafter{\@submitmonth} \@submityear}%
   \end{center}%
   \clearpage{\pagestyle{empty}\cleardoublepage}%
 }
 
 % Title page
-\newcommand*{\maketitlepage}{%
+\newcommand*{\maketitlepage}[1][0.93]{%
+  \newdimen\titlepagept%
+  \titlepagept=1pt%
+  \titlepagept=#1\titlepagept%
   \thispagestyle{empty}%
   \begin{center}%
-    {\fontsize{16.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@university}}\\ \vspace{5mm}%
-    {\fontsize{14.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@department}}\\%
-    {\fontsize{12.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@faculty}}\\ \vspace{20mm}%
+    {\fontsize{18\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@university}}\\ \vspace{5mm}%
+    {\fontsize{16\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@department}}\\%
+    {\fontsize{14\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@faculty}}\\ \vspace{20mm}%
     \ifcsname @isotypecolor\endcsname%
       {\includegraphics[height=33mm]{\@isotypecolor}}\\ \vspace{25mm}%
     \else
       {\fbox{\parbox[c][33mm]{44mm}{\texttt{\textbackslash isotypecolor} is undefined}}}\\ \vspace{25mm}
     \fi
-    {\fontsize{18.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@title}}\\ \vspace{30mm}%
-    {\fontsize{12.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@author}}\\ \vspace{4mm}%
-    {\fontsize{10.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@guideprofcue} \uppercase\expandafter{\@guideprof}}\\%
-    {\fontsize{10.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@corrprofcue} \uppercase\expandafter{\@corrprof}}\\ \vspace{10mm}%
-    {\fontsize{12.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@submitmonth} \@submityear}\\ \vspace{4mm}%
-    {\fontsize{7.5pt}{1em}\selectfont\bf\uppercase\expandafter{\@usenotice}}%
+    {\fontsize{20\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@title}}\\ \vspace{30mm}%
+    {\fontsize{14\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@author}}\\ \vspace{4mm}%
+    {\fontsize{12\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@guideprofcue} \uppercase\expandafter{\@guideprof}}\\%
+    {\fontsize{12\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@corrprofcue} \uppercase\expandafter{\@corrprof}}\\ \vspace{10mm}%
+    {\fontsize{14\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@submitmonth} \@submityear}\\ \vspace{4mm}%
+    {\fontsize{8\titlepagept}{1em}\selectfont\bf\uppercase\expandafter{\@usenotice}}%
   \end{center}%
   \clearpage{\pagestyle{empty}\cleardoublepage}%
 }
