@@ -1,0 +1,105 @@
+% Remove "draft" option for complete (but slower) compilation.
+\documentclass[oneside, draft]{dimemoir} % Print by one side
+%\documentclass[twoside, openright, draft]{dimemoir} % Print by two sides
+
+% =============
+% PACKAGES
+% =============
+\usepackage[T1]{fontenc}
+\usepackage[babel, auto=true, final]{microtype}
+\usepackage[plainpages=false, colorlinks, urlcolor=black, citecolor=black, linkcolor=black]{hyperref}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% =============
+% TYPOGRAPHY (COMMENT OR UNCOMMENT WHOLE SECTIONS)
+% =============
+% Times New Roman (as by regulation) + Nimbus 15 Narrow for monospace
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{nimbusmononarrow}
+
+% Latin Modern (Use under your own risk)
+%\usepackage{lmodern}
+
+% Linux Libertine + Libertinus for Math + Nimbus 15 Narrow for monospace (Use under your own risk)
+%\usepackage{libertine}
+%\usepackage{libertinust1math}
+%\usepackage{nimbusmononarrow}
+
+% =============
+% VARIABLES
+% =============
+%\title{Title}
+%\author{Author}
+%\university{University, USM by default}
+%\department{Department, DI by default}
+%\faculty{Location, Santiago -- Chile by default}
+%\guideprof{Guide Professor}
+%\corrprof{Correlated Professor}
+%\submitmonth{Certification month, compilation month by default}
+%\submityear{Certification year, compilation year by default}
+\isotypebw{images/logo_usm_bw} % University black/white logo path in eps or compatible
+\isotypecolor{images/logo_usm_color} % University color logo path in eps or compatible
+
+% =============
+% USEFUL COMMANDS
+% =============
+%
+% \doublespacing - sets double (2) spacing
+% \onehalfspacing - sets one and a half (1.5) spacing (default as required by the law)
+% \singlespacing - sets default single spacing (1.2) (yes, it was never 1, not anywhere)
+
+
+
+% =============
+% DOCUMENT
+% =============
+\begin{document}
+\makehardcodedtranslations
+
+\frontmatter
+  \makecoverpage
+  \maketitlepage
+  % Acknowledgements (optional)
+  \input{include/acknowledgements}
+  % Dedication (optional)
+  \begin{dedication}
+    To someone you love.
+  \end{dedication}
+  % Resumen
+  \input{include/summary}
+  % Abstract
+  \input{include/abstract}
+  % TOCs
+  \addcontentsline{toc}{chapter}{Índice de Contenidos}
+  \tableofcontents
+  \addcontentsline{toc}{chapter}{Lista de Tablas}
+  \listoftables
+  \addcontentsline{toc}{chapter}{Lista de Figuras}
+  \listoffigures
+  % Abreviaciones
+  \input{include/glossary}
+
+
+\mainmatter
+  % Introducción
+  \input{include/introduction}
+  % Desarrollo - Definición del Problema
+  \input{include/definition}
+  % Estado del Arte
+  \input{include/state_of_art}
+  % Propuesta
+  \input{include/proposal}
+  % Implementación
+  \input{include/implementation}
+  % Conclusiones
+  \input{include/conclusions}
+
+\backmatter
+  \bibliographystyle{bib/apalike-es}
+  \bibliography{bib/papers}
+
+\end{document}
