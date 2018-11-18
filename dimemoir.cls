@@ -192,23 +192,24 @@
 \let\oldlistoffigures\listoffigures
 
 \renewcommand*\tableofcontents{%
-  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Índice de Contenidos}%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{\contentsname}%
   \oldtableofcontents%
 }
 \renewcommand*\listoftables{%
-  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Lista de Tablas}%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{\listtablename}%
   \oldlistoftables%
 }
 \renewcommand*\listoffigures{%
-  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Lista de Figuras}%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{\listfigurename}%
   \oldlistoffigures%
 }
 
 % Bibliography
-\newcommand*\makebibliography[1]{%
-  \bibliographystyle{#1}%
-  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Referencias}%
-  \bibliography{bib/papers}%
+\let\oldbibliography\bibliography
+
+\renewcommand*\bibliography[1]{%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{\bibname}%
+  \oldbibliography{#1}%
 }
 
 
