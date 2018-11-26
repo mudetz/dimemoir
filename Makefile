@@ -1,7 +1,7 @@
 .PHONY: all
 all: memoir.pdf
 
-%.pdf: %.tex bib/*.bib bib/*.bst include/*.tex images/**
+%.pdf: %.tex **/*.*
 	latexmk -pdf $<
 
 .PHONY: clean
@@ -14,8 +14,13 @@ clean:
 	find . -not -path './.git/*' -iname '*.dvi' -type f -delete
 	find . -not -path './.git/*' -iname '*.fdb_latexmk' -type f -delete
 	find . -not -path './.git/*' -iname '*.fls' -type f -delete
+	find . -not -path './.git/*' -iname '*.glg' -type f -delete
+	find . -not -path './.git/*' -iname '*.glo' -type f -delete
+	find . -not -path './.git/*' -iname '*.gls' -type f -delete
 	find . -not -path './.git/*' -iname '*.idx' -type f -delete
+	find . -not -path './.git/*' -iname '*.ilg' -type f -delete
 	find . -not -path './.git/*' -iname '*.ind' -type f -delete
+	find . -not -path './.git/*' -iname '*.ist' -type f -delete
 	find . -not -path './.git/*' -iname '*.lof' -type f -delete
 	find . -not -path './.git/*' -iname '*.log' -type f -delete
 	find . -not -path './.git/*' -iname '*.lot' -type f -delete
@@ -27,6 +32,9 @@ clean:
 	find . -not -path './.git/*' -iname '*.toc' -type f -delete
 	find . -not -path './.git/*' -iname '*.vrb' -type f -delete
 	find . -not -path './.git/*' -iname '_minted*' -type d -exec rm -r "{}" +
+
+.PHONY: distclean
+distclean: pdfclean
 
 .PHONY: pdfclean
 pdfclean:

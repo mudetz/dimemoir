@@ -16,6 +16,8 @@
 \ProvidesClass{dimemoir}[2018-11-18 v0.01 LaTeX package for UTFSM DI Memoir]
 
 \RequirePackage{graphicx}
+\RequirePackage[toc]{glossaries}
+\RequirePackage{makeidx}
 \pdfminorversion=8
 % ==============================================
 % MARGINS
@@ -204,6 +206,12 @@
   \oldlistoffigures%
 }
 
+% Glossaries
+\let\oldprintglossaries\printglossaries
+\renewcommand*\printglossaries{%
+  \oldprintglossaries%
+}
+
 % Bibliography
 \let\oldbibliography\bibliography
 
@@ -212,6 +220,15 @@
   \oldbibliography{#1}%
 }
 
+% Index
+\let\oldprintindex\printindex
+\renewcommand*\printindex{%
+  \cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{\indexname}%
+  \begingroup%
+  \footnotesize%
+  \oldprintindex%
+  \endgroup%
+}
 
 % ==============================================
 % DRAFT MODE OPTIONS
@@ -228,10 +245,13 @@
 % HARDCODED TRANSLATIONS
 % ==============================================
 \newcommand*{\makehardcodedtranslations}{%
-  \renewcommand*{\contentsname}{\'Indice de Contenidos}%
+  \renewcommand*{\contentsname}{Tabla de Contenidos}%
   \renewcommand*{\listfigurename}{Lista de Figuras}%
   \renewcommand*{\listtablename}{Lista de Tablas}%
   \renewcommand*{\bibname}{Referencias}%
+  \renewcommand*{\glossaryname}{Glosario}%
+  \renewcommand*{\indexname}{\'Indice de T\'erminos}%
+  \renewcommand*{\glossaryname}{Glosario}%
 }
 
 % ==============================================

@@ -53,6 +53,18 @@
 % \singlespacing - sets default single spacing (1.2) (yes, it was never 1, not anywhere)
 
 
+% =============
+% GLOSSARIES
+% =============
+\input{include/glossary}
+\setglossarystyle{altlistgroup}
+\makeglossaries
+
+
+% =============
+% INDICES (INVERTED)
+% =============
+\makeindex
 
 % =============
 % DOCUMENT
@@ -61,7 +73,7 @@
 \makehardcodedtranslations
 
 \frontmatter
-  % Cover and title page. Font may be scaled via optional argument. Ej: \makecolverpage[1.5]
+  % Cover and title page. Font may be scaled via optional argument. E.g.: \makecolverpage[1.5]
   \makecoverpage
   \maketitlepage
   % Acknowledgements (optional)
@@ -70,34 +82,45 @@
   \begin{dedication}
     To someone you love.
   \end{dedication}
-  % Resumen
+  % Resume
   \input{include/summary}
   % Abstract
   \input{include/abstract}
-  % TOCs
+  % Table of Contents
   \tableofcontents
   \listoftables
   \listoffigures
-  % Abreviaciones
-  \input{include/glossary}
+  % Glossary (Appears only if not empty)
+  % https://en.wikibooks.org/wiki/LaTeX/Glossary
+  \printglossaries
 
 
 \mainmatter
-  % Introducción
+  % Introduction
   \input{include/introduction}
-  % Desarrollo - Definición del Problema
+  % Problem Definition
   \input{include/definition}
-  % Estado del Arte
+  % State of the Arte
   \input{include/state_of_art}
-  % Propuesta
+  % Proposal
   \input{include/proposal}
-  % Implementación
+  % Implementation
   \input{include/implementation}
-  % Conclusiones
+  % Conclusions
   \input{include/conclusions}
 
 \backmatter
+  % Bibliography
   \bibliographystyle{bib/apalike-es}
   \bibliography{bib/papers}
+
+  % Term index (inverted)
+  % https://en.wikibooks.org/wiki/LaTeX/Indexing
+  \printindex
+
+  % Appendices
+  % \appendix  % From now on, every chapter is an appendix
+    % \input{include/appendix1}
+    % \input{include/appendix2}
 
 \end{document}
