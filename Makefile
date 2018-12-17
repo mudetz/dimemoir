@@ -1,7 +1,7 @@
 .PHONY: all
 all: memoir.pdf
 
-%.pdf: %.tex **/*.*
+%.pdf: %.tex **/*.* *.*
 	latexmk -pdf $<
 
 .PHONY: clean

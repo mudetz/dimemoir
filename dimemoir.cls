@@ -94,6 +94,7 @@
   \or abril%
   \or mayo%
   \or junio%
+  \or julio%
   \or agosto%
   \or septiembre%
   \or octubre%
